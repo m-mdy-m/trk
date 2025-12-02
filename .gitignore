@@ -1,0 +1,8 @@
+node_modules
+tags
+*.tgz
+dist
+build
+binaries
+.env
+coverage
