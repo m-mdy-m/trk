@@ -1,8 +1,44 @@
-node_modules
-tags
-*.tgz
-dist
-build
-binaries
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+
+# Environment
 .env
-coverage
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Misc
+.cache/
+tmp/
+temp/
