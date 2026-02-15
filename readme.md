@@ -12,13 +12,13 @@ A minimal time tracking and reporting tool for developers who want to focus on b
 ## Install
 
 ```bash
-npm install -g trk-cli
+npm install -g @medishn/trk
 ```
 
 Or run directly:
 
 ```bash
-npx trk-cli start "project-name"
+npx @medishn/trk start "project-name"
 ```
 
 ## Quick start
@@ -36,15 +36,6 @@ trk report daily
 # See this week
 trk report weekly
 ```
-
-## Why TRK?
-
-Most time trackers are either too complex or require constant attention. TRK is different:
-
-- **Fast**: CLI-based, no UI overhead
-- **Private**: All data stays on your machine
-- **Simple**: Does one thing well
-- **Honest**: Shows real numbers, not motivational fluff
 
 ## Features
 
