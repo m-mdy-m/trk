@@ -1,34 +1,23 @@
-## Description
+## What does this PR do?
 
-Brief description of what this PR does.
+<!-- One paragraph. What changed and why. -->
 
 ## Type of change
 
 - [ ] Bug fix
 - [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
-
-## Changes made
-
-- Change 1
-- Change 2
-- Change 3
-
-## Testing
-
-- [ ] Tests pass locally
-- [ ] Added tests for new features
-- [ ] Updated documentation
-
-## Related issues
-
-Closes #
+- [ ] Refactor (no behavior change)
+- [ ] Docs
+- [ ] Tests
+- [ ] Chore (dependencies, tooling)
 
 ## Checklist
 
-- [ ] Code follows project style
-- [ ] Commits follow semantic format
-- [ ] Updated CHANGELOG.md (if applicable)
-- [ ] No console.log or debug code
-- [ ] Tested on my machine
+- [ ] Tests pass (`pnpm test`)
+- [ ] Code is formatted (`pnpm run format`)
+- [ ] Commits follow semantic format (`feat:`, `fix:`, etc.)
+- [ ] Related issue linked (if any)
+
+## Notes for reviewers
+
+<!-- Anything specific to pay attention to, edge cases, tradeoffs made. -->

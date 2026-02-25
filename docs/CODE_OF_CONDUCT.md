@@ -1,58 +1,17 @@
 # Code of Conduct
 
-## Our standards
+Keep it simple: be respectful.
 
-- Be respectful
-- Focus on what's best for the project
-- Accept constructive criticism
-- Show empathy
+This project is a small tool maintained in spare time. Contributions and discussions are welcome as long as they're constructive and respectful.
 
-## Unacceptable behavior
+**Expected behavior:**
+- Communicate clearly and politely
+- Accept feedback without taking it personally
+- Focus on the problem, not the person
 
-- Harassment of any kind
-- Trolling or insulting comments
-- Personal or political attacks
-- Publishing others' private information
+**Not acceptable:**
+- Harassment, insults, or personal attacks
+- Dismissive or condescending responses
+- Off-topic noise
 
-## Enforcement
-
-Violations may result in temporary or permanent ban from the project.
-
-## Reporting
-
-Email bitsgenix@gmail.com with details. All reports will be handled confidentially.
-
-## Scope
-
-This applies to all project spaces (issues, PRs, discussions) and when representing the project publicly.
-```
-
----
-
-## 📄 SECURITY.md
-
-```markdown
-# Security Policy
-
-## Reporting a vulnerability
-
-**Do not open public issues for security vulnerabilities.**
-
-Email bitsgenix@gmail.com with:
-- Description of the vulnerability
-- Steps to reproduce
-- Potential impact
-- Any suggested fixes
-
-We'll respond within 48 hours.
-
-## Supported versions
-
-Only the latest release receives security updates.
-
-## Security practices
-
-- All data is stored locally
-- No network requests (except updates)
-- Dependencies are regularly updated
-- Code is reviewed before merging
+If something feels off, email [bitsgenix@gmail.com](mailto:bitsgenix@gmail.com).
