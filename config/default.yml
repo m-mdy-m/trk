@@ -16,7 +16,7 @@ database:
   path: "~/.trk/trk.db"
 
 log:
-  level: "info"
+  level: "warn"
   file: "~/.trk/trk.log"
   max_files: 7
 
