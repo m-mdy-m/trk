@@ -1,8 +1,6 @@
+import { LOG_FILE } from '@common/constant';
 import winston from 'winston';
-import path from 'path';
-import os from 'os';
 
-const LOG_FILE = path.join(os.homedir(), '.trk', 'trk.log');
 
 export const logger = winston.createLogger({
   level: process.env.TRK_LOG_LEVEL ?? 'warn',
