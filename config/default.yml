@@ -1,0 +1,26 @@
+# TRK default configuration
+# Override any key in ~/.trk/config.yaml
+
+app:
+  name: trk
+  debug: false
+  verbose: false
+
+work:
+  daily_hours: 8
+  pomodoro_minutes: 90
+  break_minutes: 15
+  timezone: "local"
+
+database:
+  path: "~/.trk/trk.db"
+
+log:
+  level: "info"
+  file: "~/.trk/trk.log"
+  max_files: 7
+
+display:
+  date_format: "YYYY-MM-DD"
+  time_format: "HH:mm"
+  week_starts_on: "monday"
