@@ -38,7 +38,7 @@ export class MetricsCommand extends BaseCommand {
   }
 
   private showTrends() {
-    const entries = this.call("trends:get", undefined) as TrendEntry[];
+    const entries = this.call("trends:get", undefined) ;
     if (!entries || entries.length === 0) {
       console.log(chalk.yellow("No trend data available."));
       return;

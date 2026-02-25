@@ -38,7 +38,7 @@ export class ChecklistCommand extends BaseCommand {
   }
 
   private initDaily() {
-    const items = this.call("checklist:daily", undefined) as ChecklistItem[] | null;
+    const items = this.call("checklist:daily", undefined)
 
     if (!items || items.length === 0) {
       console.log(chalk.gray("\n  No daily checklist items found.\n"));
@@ -50,7 +50,7 @@ export class ChecklistCommand extends BaseCommand {
   }
 
   private initWeekly() {
-    const items = this.call("checklist:weekly", undefined) as ChecklistItem[] | null;
+    const items = this.call("checklist:weekly", undefined)
 
     if (!items || items.length === 0) {
       console.log(chalk.gray("\n  No weekly checklist items found.\n"));
@@ -62,7 +62,7 @@ export class ChecklistCommand extends BaseCommand {
   }
 
   private initMonthly() {
-    const items = this.call("checklist:monthly", undefined) as ChecklistItem[] | null;
+    const items = this.call("checklist:monthly", undefined)
 
     if (!items || items.length === 0) {
       console.log(chalk.gray("\n  No monthly checklist items found.\n"));
@@ -76,7 +76,7 @@ export class ChecklistCommand extends BaseCommand {
   private initCustom(name: string) {
     const n = this.requireArg<string>(name, "Error: checklist name is required.");
 
-    const items = this.call("checklist:custom", { name: n }) as ChecklistItem[] | null;
+    const items = this.call("checklist:custom", { name: n })
 
     if (!items || items.length === 0) {
       console.log(chalk.gray(`\n  No items found for checklist "${n}".\n`));

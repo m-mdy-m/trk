@@ -148,10 +148,8 @@ export class TimerService extends BaseService {
     if (!block.duration || block.duration < 60) return;
 
     this.execute(
-      `
-      INSERT INTO log_entries (id, label, project_id, date, duration, note, source, created_at)
-      VALUES (?,?,?,?,?,?,?,?)
-    `,
+      `INSERT INTO log_entries (id, label, project_id, date, duration, note, source, created_at)
+      VALUES (@id, @label, @projectId, @date, @duration, @note, @source, @createdAt)`,
       {
         id: uid(),
         label: block.label,
@@ -161,7 +159,7 @@ export class TimerService extends BaseService {
         note: block.note ?? null,
         source: "timer",
         createdAt: now(),
-      },
+      }
     );
   }
 

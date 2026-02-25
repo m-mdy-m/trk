@@ -42,7 +42,7 @@ export class ExportCommand extends BaseCommand {
       format,
       from: opts.from,
       to: opts.to,
-    }) as ExportResult | null;
+    })
 
     if (!result) {
       this.logger.warn("Export failed or returned no result.");

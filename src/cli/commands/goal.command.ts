@@ -49,11 +49,11 @@ export class GoalCommand extends BaseCommand {
     const event =
       period === "weekly" ? "goal:set:weekly" : "goal:set:monthly";
 
-    const g = this.call(event as any, {
+    const g = this.call(event, {
       label,
       hours,
       deadline: opts.deadline,
-    }) as Goal | null;
+    });
 
     if (!g) {
       this.logger.warn("Goal creation failed.");
@@ -68,7 +68,7 @@ export class GoalCommand extends BaseCommand {
   }
 
   private initList() {
-    const goals = this.call("goal:list", undefined) as Goal[] | null;
+    const goals = this.call("goal:list", undefined) 
 
     if (!goals || goals.length === 0) {
       console.log(chalk.gray("No goals set yet."));

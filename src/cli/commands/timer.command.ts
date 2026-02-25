@@ -34,7 +34,7 @@ export class TimerCommand extends BaseCommand {
   private initStart(label: string | undefined, opts: { project?: string } = {}) {
     const l = this.requireArg<string>(label, 'Error: label is required — e.g. trk start "ProjectX - Feature X"');
 
-    const block = this.call("timer:start", { label: l, project: opts.project }) as TimerBlock;
+    const block = this.call("timer:start", { label: l, project: opts.project });
     if (!block) {
       this.logger.warn("Timer start failed or returned no block.");
       return;
@@ -47,7 +47,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initStop() {
-    const block = this.call("timer:stop", undefined) as TimerBlock | null;
+    const block = this.call("timer:stop", undefined) ;
     if (!block) {
       console.log(chalk.yellow("No active timer to stop."));
       return;
@@ -58,7 +58,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initPause() {
-    const block = this.call("timer:pause", undefined) as TimerBlock | null;
+    const block = this.call("timer:pause", undefined) ;
     if (!block) {
       console.log(chalk.yellow("No running timer to pause."));
       return;
@@ -68,7 +68,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initResume() {
-    const block = this.call("timer:resume", undefined) as TimerBlock | null;
+    const block = this.call("timer:resume", undefined) ;
     if (!block) {
       console.log(chalk.yellow("Nothing to resume. No paused timer found."));
       return;
@@ -77,7 +77,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initCancel() {
-    const ok = this.call("timer:cancel", undefined) as boolean | null;
+    const ok = this.call("timer:cancel", undefined) ;
     if (!ok) {
       console.log(chalk.yellow("No active timer to cancel."));
       return;
@@ -86,7 +86,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initStatus() {
-    const s = this.call("timer:status", undefined) as TimerStatus | null;
+    const s = this.call("timer:status", undefined);
     if (!s || !s.active || !s.block) {
       console.log(chalk.gray("No active timer."));
       return;

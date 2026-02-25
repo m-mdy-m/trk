@@ -48,7 +48,7 @@ export class ProjectCommand extends BaseCommand {
   }
 
   private initList() {
-    const projects = this.call("project:list", undefined) as Project[] | null;
+    const projects = this.call("project:list", undefined);
 
     if (!projects || projects.length === 0) {
       console.log(chalk.gray("No projects yet. Use: trk project add <name>"));
@@ -71,7 +71,7 @@ export class ProjectCommand extends BaseCommand {
       "Error: project name is required — e.g. trk project progress ProjectX"
     );
 
-    const result = this.call("project:progress", { name: projectName }) as ProjectProgress | null;
+    const result = this.call("project:progress", { name: projectName }) ;
 
     if (!result) {
       this.exitWithError(`Project "${projectName}" not found.`);

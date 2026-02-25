@@ -32,7 +32,7 @@ export class LogCommand extends BaseCommand {
   }
 
   private initList(opts: { date?: string } = {}) {
-    const entries = (this.call('log:list', { date: opts.date }) as LogEntry[] | null) ?? [];
+    const entries = (this.call('log:list', { date: opts.date })) ?? [];
 
     if (entries.length === 0) {
       console.log(chalk.gray('No entries for this date.'));
@@ -59,7 +59,7 @@ export class LogCommand extends BaseCommand {
       this.exitWithError('Error: hours must be a positive number (e.g. 2.5)');
     }
 
-    const entry = this.call('log:add', { label: l, hours, note, date: opts.date }) as LogEntry | null;
+    const entry = this.call('log:add', { label: l, hours, note, date: opts.date });
     if (!entry) {
       this.logger.warn('log:add returned no entry.');
       console.log(chalk.yellow('Failed to add log entry.'));

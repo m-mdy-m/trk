@@ -43,7 +43,7 @@ export class ReportCommand extends BaseCommand {
   }
 
   private initDaily(opts: { date?: string }) {
-    const report = this.call("report:daily", { date: opts.date }) as Report | null;
+    const report = this.call("report:daily", { date: opts.date })
     if (!report) {
       console.log(chalk.yellow("Could not generate daily report."));
       return;
@@ -52,7 +52,7 @@ export class ReportCommand extends BaseCommand {
   }
 
   private initWeekly(opts: { date?: string }) {
-    const report = this.call("report:weekly", { date: opts.date }) as Report | null;
+    const report = this.call("report:weekly", { date: opts.date })
     if (!report) {
       console.log(chalk.yellow("Could not generate weekly report."));
       return;
@@ -61,7 +61,7 @@ export class ReportCommand extends BaseCommand {
   }
 
   private initMonthly(opts: { date?: string }) {
-    const report = this.call("report:monthly", { date: opts.date }) as Report | null;
+    const report = this.call("report:monthly", { date: opts.date })
     if (!report) {
       console.log(chalk.yellow("Could not generate monthly report."));
       return;
