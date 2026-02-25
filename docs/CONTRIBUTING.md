@@ -29,7 +29,7 @@ Keep it practical. We're building a tool, not a framework.
 2. Create a branch (`git checkout -b fix-something`)
 3. Make your changes
 4. Write tests
-5. Run `npm test` and `npm run lint`
+5. Run `pnpm run typecheck` and `pnpm run format:check`
 6. Commit using semantic commits (see below)
 7. Push and open a PR
 
