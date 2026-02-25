@@ -3,6 +3,7 @@ import { SharedCommand } from "@common/shared.common";
 import { EventPayload, Events } from "@glandjs/events";
 import { TrkEvents } from "@core/events";
 import Table from "cli-table3";
+import chalk from "chalk";
 export abstract class BaseCommand extends SharedCommand {
   protected program: Command;
   abstract init(): void;
@@ -57,5 +58,10 @@ export abstract class BaseCommand extends SharedCommand {
     });
     for (const r of rows) table.push(r);
     this.logger.info(table.toString());
+  }
+  protected progressBar(pct: number, width = 30): string {
+    const filled = Math.round((pct / 100) * width);
+    const empty = width - filled;
+    return chalk.green("█".repeat(filled)) + chalk.gray("░".repeat(empty));
   }
 }

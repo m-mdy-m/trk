@@ -11,7 +11,6 @@ export class TimerCommand extends BaseCommand {
 
   init(): void {
     const startCmd = this.addCommand("start [label]", "Start a new timer block");
-    startCmd.option("-p, --project <name>", "Associate with a project");
     startCmd.action(this.action((label: string | undefined, opts: any) => this.initStart(label, opts)));
 
     const stopCmd = this.addCommand("stop", "Stop the current timer and save the block");
@@ -33,7 +32,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initStart(label: string | undefined, opts: { project?: string } = {}) {
-    const l = this.requireArg<string>(label, 'Error: label is required — e.g. trk start "VERO - Feature X"');
+    const l = this.requireArg<string>(label, 'Error: label is required — e.g. trk start "ProjectX - Feature X"');
 
     const block = this.call("timer:start", { label: l, project: opts.project }) as TimerBlock;
     if (!block) {
