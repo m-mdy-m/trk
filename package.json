@@ -52,7 +52,7 @@
     "@types/better-sqlite3": "^7.6.8",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.11.24",
-    "husky": "^4.3.8",
+    "husky": "^9.1.7",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "tsconfig-paths": "^4.2.0",
