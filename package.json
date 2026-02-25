@@ -1,5 +1,5 @@
 {
-  "name": "trk",
+  "name": "@medishn/trk",
   "version": "0.1.0",
   "description": "Minimal CLI time tracker — event-driven, local-first",
   "author": "m-mdy-m <bitsgenix@gmail.com>",
@@ -24,6 +24,7 @@
     "prepare": "husky",
     "clean": "pnpm -r clean",
     "typecheck": "tsc --noEmit",
+    "lint-staged": "lint-staged",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
@@ -60,6 +61,10 @@
     "typescript": "^5.3.3",
     "vitest": "^4.0.18"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  
   "lint-staged": {
     "**/*.ts": "prettier --ignore-path ./.prettierignore --write"
   }
