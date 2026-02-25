@@ -20,6 +20,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
+      "@common/*": ["src/common/*"],
       "@core/*": ["src/core/*"],
       "@services/*": ["src/services/*"],
       "@cli/*": ["src/cli/*"],
