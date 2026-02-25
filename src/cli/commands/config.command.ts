@@ -11,19 +11,11 @@ export class ConfigCommand extends BaseCommand {
   init(): void {
     const cfg = this.addCommand("config", "Read / write configuration");
 
-    const setCmd = cfg
-      .command("set <key> <value>")
-      .description("Set a config key (e.g. work-hours, pomodoro, break)");
+    const setCmd = cfg.command("set <key> <value>").description("Set a config key (e.g. work-hours, pomodoro, break)");
 
-    setCmd.action(
-      this.action((key: string, value: string) =>
-        this.initSet(key, value)
-      )
-    );
+    setCmd.action(this.action((key: string, value: string) => this.initSet(key, value)));
 
-    const listCmd = cfg
-      .command("list")
-      .description("Show all configuration values");
+    const listCmd = cfg.command("list").description("Show all configuration values");
 
     listCmd.action(this.action(() => this.initList()));
 
@@ -31,10 +23,7 @@ export class ConfigCommand extends BaseCommand {
   }
 
   private initSet(key: string, value: string) {
-    const k = this.requireArg<string>(
-      key,
-      "Error: config key is required — e.g. trk config set work-hours 8"
-    );
+    const k = this.requireArg<string>(key, "Error: config key is required — e.g. trk config set work-hours 8");
 
     const parsed = isNaN(Number(value)) ? value : Number(value);
 
@@ -45,9 +34,7 @@ export class ConfigCommand extends BaseCommand {
       return;
     }
 
-    console.log(
-      chalk.green(`✔  Config updated: ${chalk.bold(k)} = ${chalk.white(String(parsed))}`)
-    );
+    console.log(chalk.green(`✔  Config updated: ${chalk.bold(k)} = ${chalk.white(String(parsed))}`));
   }
 
   private initList() {

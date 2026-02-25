@@ -47,7 +47,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initStop() {
-    const block = this.call("timer:stop", undefined) ;
+    const block = this.call("timer:stop", undefined);
     if (!block) {
       console.log(chalk.yellow("No active timer to stop."));
       return;
@@ -58,7 +58,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initPause() {
-    const block = this.call("timer:pause", undefined) ;
+    const block = this.call("timer:pause", undefined);
     if (!block) {
       console.log(chalk.yellow("No running timer to pause."));
       return;
@@ -68,7 +68,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initResume() {
-    const block = this.call("timer:resume", undefined) ;
+    const block = this.call("timer:resume", undefined);
     if (!block) {
       console.log(chalk.yellow("Nothing to resume. No paused timer found."));
       return;
@@ -77,7 +77,7 @@ export class TimerCommand extends BaseCommand {
   }
 
   private initCancel() {
-    const ok = this.call("timer:cancel", undefined) ;
+    const ok = this.call("timer:cancel", undefined);
     if (!ok) {
       console.log(chalk.yellow("No active timer to cancel."));
       return;

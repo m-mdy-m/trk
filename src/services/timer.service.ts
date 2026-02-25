@@ -159,7 +159,7 @@ export class TimerService extends BaseService {
         note: block.note ?? null,
         source: "timer",
         createdAt: now(),
-      }
+      },
     );
   }
 

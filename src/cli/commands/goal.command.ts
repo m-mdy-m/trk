@@ -17,11 +17,7 @@ export class GoalCommand extends BaseCommand {
       .description("Set a goal (period: weekly | monthly)")
       .option("--hours <n>", "Target hours", parseFloat)
       .option("--deadline <YYYY-MM-DD>", "Optional deadline")
-      .action(
-        this.action((period: string, label: string, opts: any) =>
-          this.initSet(period, label, opts)
-        )
-      );
+      .action(this.action((period: string, label: string, opts: any) => this.initSet(period, label, opts)));
 
     goal
       .command("list")
@@ -41,13 +37,9 @@ export class GoalCommand extends BaseCommand {
       this.exitWithError('Period must be "weekly" or "monthly"');
     }
 
-    const hours = this.requireArg<number>(
-      opts.hours,
-      "--hours is required (e.g. --hours 20)"
-    );
+    const hours = this.requireArg<number>(opts.hours, "--hours is required (e.g. --hours 20)");
 
-    const event =
-      period === "weekly" ? "goal:set:weekly" : "goal:set:monthly";
+    const event = period === "weekly" ? "goal:set:weekly" : "goal:set:monthly";
 
     const g = this.call(event, {
       label,
@@ -60,37 +52,23 @@ export class GoalCommand extends BaseCommand {
       return;
     }
 
-    console.log(
-      chalk.green(
-        `✔  Goal set: "${g.label}" — ${g.targetHours}h (${g.period})`
-      )
-    );
+    console.log(chalk.green(`✔  Goal set: "${g.label}" — ${g.targetHours}h (${g.period})`));
   }
 
   private initList() {
-    const goals = this.call("goal:list", undefined) 
+    const goals = this.call("goal:list", undefined);
 
     if (!goals || goals.length === 0) {
       console.log(chalk.gray("No goals set yet."));
       return;
     }
 
-    const rows = goals.map((g) => [
-      g.label,
-      g.period,
-      g.targetHours,
-      g.deadline ?? "—",
-    ]);
+    const rows = goals.map((g) => [g.label, g.period, g.targetHours, g.deadline ?? "—"]);
 
-    this.printTable(
-      ["Label", "Period", "Target (h)", "Deadline"],
-      rows
-    );
+    this.printTable(["Label", "Period", "Target (h)", "Deadline"], rows);
   }
   private initProgress() {
-    const items = this.call("goal:progress", undefined) as
-      | GoalProgress[]
-      | null;
+    const items = this.call("goal:progress", undefined) as GoalProgress[] | null;
 
     if (!items || items.length === 0) {
       console.log(chalk.gray("No goals to track."));
@@ -102,9 +80,7 @@ export class GoalCommand extends BaseCommand {
 
       console.log(`\n  ${chalk.bold(g.label)} [${g.period}]`);
       console.log(`  ${bar} ${percentComplete}%`);
-      console.log(
-        `  Logged ${formatDuration(loggedSeconds)} of ${g.targetHours}h target`
-      );
+      console.log(`  Logged ${formatDuration(loggedSeconds)} of ${g.targetHours}h target`);
     }
   }
 }

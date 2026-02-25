@@ -3,11 +3,11 @@ import chalk from "chalk";
 import type { Metrics, TrendEntry } from "@core/events";
 import { BaseCommand } from "./base.command";
 function gauge(pct: number): string {
-  if (pct >= 80) return chalk.green('●●●●●');
-  if (pct >= 60) return chalk.yellow('●●●●○');
-  if (pct >= 40) return chalk.yellow('●●●○○');
-  if (pct >= 20) return chalk.red('●●○○○');
-  return chalk.red('●○○○○');
+  if (pct >= 80) return chalk.green("●●●●●");
+  if (pct >= 60) return chalk.yellow("●●●●○");
+  if (pct >= 40) return chalk.yellow("●●●○○");
+  if (pct >= 20) return chalk.red("●●○○○");
+  return chalk.red("●○○○○");
 }
 export class MetricsCommand extends BaseCommand {
   constructor(program: Command) {
@@ -25,7 +25,7 @@ export class MetricsCommand extends BaseCommand {
   }
 
   private showMetrics() {
-    const m = this.call("metrics:get", undefined)
+    const m = this.call("metrics:get", undefined);
     if (!m) {
       console.log(chalk.yellow("No metrics available."));
       return;
@@ -38,7 +38,7 @@ export class MetricsCommand extends BaseCommand {
   }
 
   private showTrends() {
-    const entries = this.call("trends:get", undefined) ;
+    const entries = this.call("trends:get", undefined);
     if (!entries || entries.length === 0) {
       console.log(chalk.yellow("No trend data available."));
       return;

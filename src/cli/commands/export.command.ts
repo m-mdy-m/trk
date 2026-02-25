@@ -18,31 +18,19 @@ export class ExportCommand extends BaseCommand {
       .option("--from <YYYY-MM-DD>", "Start date")
       .option("--to <YYYY-MM-DD>", "End date")
       .option("-o, --out <dir>", "Output directory (default: current dir)", ".")
-      .action(
-        this.action((opts: {
-          format: "md" | "json" | "csv";
-          from?: string;
-          to?: string;
-          out?: string;
-        }) => this.initExport(opts))
-      );
+      .action(this.action((opts: { format: "md" | "json" | "csv"; from?: string; to?: string; out?: string }) => this.initExport(opts)));
 
     this.debugRegistered("Export");
   }
 
-  private initExport(opts: {
-    format: "md" | "json" | "csv";
-    from?: string;
-    to?: string;
-    out?: string;
-  }) {
+  private initExport(opts: { format: "md" | "json" | "csv"; from?: string; to?: string; out?: string }) {
     const format = opts.format ?? "md";
 
     const result = this.call("export:run", {
       format,
       from: opts.from,
       to: opts.to,
-    })
+    });
 
     if (!result) {
       this.logger.warn("Export failed or returned no result.");
@@ -62,9 +50,7 @@ export class ExportCommand extends BaseCommand {
     console.log(`   File   : ${chalk.bold(result.filename)}`);
     console.log(`   Path   : ${chalk.cyan(outPath)}`);
     if (opts.from || opts.to) {
-      console.log(
-        `   Range  : ${opts.from ?? "..."} → ${opts.to ?? "..."}`
-      );
+      console.log(`   Range  : ${opts.from ?? "..."} → ${opts.to ?? "..."}`);
     }
     console.log(`   Format : ${format}`);
   }

@@ -193,13 +193,13 @@ trk config list
 
 Shorthand keys:
 
-| Key | Maps to |
-|---|---|
-| `work-hours` | `work.daily_hours` |
-| `pomodoro` | `work.pomodoro_minutes` |
-| `break` | `work.break_minutes` |
-| `timezone` | `work.timezone` |
-| `date-format` | `display.date_format` |
+| Key           | Maps to                  |
+| ------------- | ------------------------ |
+| `work-hours`  | `work.daily_hours`       |
+| `pomodoro`    | `work.pomodoro_minutes`  |
+| `break`       | `work.break_minutes`     |
+| `timezone`    | `work.timezone`          |
+| `date-format` | `display.date_format`    |
 | `week-starts` | `display.week_starts_on` |
 
 ```

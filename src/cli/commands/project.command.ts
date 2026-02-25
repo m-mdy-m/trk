@@ -26,10 +26,7 @@ export class ProjectCommand extends BaseCommand {
   }
 
   private initAdd(name: string, opts: { goal?: string; priority?: string }) {
-    const projectName = this.requireArg<string>(
-      name,
-      'Error: project name is required — e.g. trk project add "ProjectX"'
-    );
+    const projectName = this.requireArg<string>(name, 'Error: project name is required — e.g. trk project add "ProjectX"');
 
     const project = this.call("project:add", {
       name: projectName,
@@ -55,23 +52,15 @@ export class ProjectCommand extends BaseCommand {
       return;
     }
 
-    const rows = projects.map((p) => [
-      p.name,
-      p.goalHours ?? "—",
-      p.priority ?? "—",
-      p.createdAt.slice(0, 10),
-    ]);
+    const rows = projects.map((p) => [p.name, p.goalHours ?? "—", p.priority ?? "—", p.createdAt.slice(0, 10)]);
 
     this.printTable(["Name", "Goal (h)", "Priority", "Created"], rows);
   }
 
   private initProgress(name: string) {
-    const projectName = this.requireArg<string>(
-      name,
-      "Error: project name is required — e.g. trk project progress ProjectX"
-    );
+    const projectName = this.requireArg<string>(name, "Error: project name is required — e.g. trk project progress ProjectX");
 
-    const result = this.call("project:progress", { name: projectName }) ;
+    const result = this.call("project:progress", { name: projectName });
 
     if (!result) {
       this.exitWithError(`Project "${projectName}" not found.`);
@@ -81,11 +70,7 @@ export class ProjectCommand extends BaseCommand {
     const p = project;
 
     console.log(chalk.bold.cyan(`\n  ${p.name}\n`));
-    console.log(
-      `  Logged : ${chalk.white(formatDuration(loggedSeconds))} (${secondsToHours(
-        loggedSeconds
-      )}h)`
-    );
+    console.log(`  Logged : ${chalk.white(formatDuration(loggedSeconds))} (${secondsToHours(loggedSeconds)}h)`);
 
     if (p.goalHours) {
       const bar = this.progressBar(percentComplete!);
@@ -93,6 +78,4 @@ export class ProjectCommand extends BaseCommand {
       console.log(`  ${bar} ${percentComplete}%`);
     }
   }
-
-
 }

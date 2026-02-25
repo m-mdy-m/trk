@@ -10,7 +10,7 @@
 
 </div>
 
-TRK is a command-line time tracker built for engineers who want to own their time data. 
+TRK is a command-line time tracker built for engineers who want to own their time data.
 
 The application is wired together by an event-driven architecture using [`@glandjs/events`](https://github.com/glandjs/events). Every CLI command publishes an event; every service is a pure subscriber. No framework, no DI container — just a clean message bus.
 

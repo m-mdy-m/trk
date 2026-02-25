@@ -86,11 +86,13 @@ export type TrkEvents = {
 Either extend an existing command file or create a new one in `src/cli/commands/`. All commands extend `BaseCommand`.
 
 ```ts
-tagCmd.action(this.action((id: string, tag: string) => {
-  const block = this.call("timer:tag", { id, tag });
-  if (!block) return;
-  console.log(`Tagged: ${block.label}`);
-}));
+tagCmd.action(
+  this.action((id: string, tag: string) => {
+    const block = this.call("timer:tag", { id, tag });
+    if (!block) return;
+    console.log(`Tagged: ${block.label}`);
+  }),
+);
 ```
 
 Register the new command class in `src/cli/index.ts`.
@@ -150,13 +152,13 @@ TRK_LOG_LEVEL=debug TRK_VERBOSE=1 pnpm dev start "test"
 
 ## Scripts
 
-| Command | What it does |
-|---|---|
-| `pnpm dev` | Run from source with tsx (no build step) |
-| `pnpm build` | Compile TypeScript to `dist/` |
-| `pnpm typecheck` | Type-check without emitting |
-| `pnpm format` | Check formatting with Prettier |
-| `pnpm format:fix` | Auto-fix formatting |
+| Command           | What it does                             |
+| ----------------- | ---------------------------------------- |
+| `pnpm dev`        | Run from source with tsx (no build step) |
+| `pnpm build`      | Compile TypeScript to `dist/`            |
+| `pnpm typecheck`  | Type-check without emitting              |
+| `pnpm format`     | Check formatting with Prettier           |
+| `pnpm format:fix` | Auto-fix formatting                      |
 
 ---
 
