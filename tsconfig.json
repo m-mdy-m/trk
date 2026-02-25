@@ -24,6 +24,7 @@
       "@core/*": ["src/core/*"],
       "@services/*": ["src/services/*"],
       "@cli/*": ["src/cli/*"],
+      "@cli": ["src/cli/index"],
       "@utils/*": ["src/utils/*"]
     }
   },

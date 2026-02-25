@@ -1,2 +1,2 @@
-export {BaseException} from "./exception"
-export * from "./database"
+export { BaseException } from "./exception";
+export * from "./database";

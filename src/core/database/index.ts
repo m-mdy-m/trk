@@ -1,9 +1,9 @@
-import Database from 'better-sqlite3';
-import fs from 'fs';
-import { logger } from '@utils/logger';
-import { runMigrations } from './schema';
-import { DatabaseConnectionException, DatabaseMigrationException, DatabaseNotInitializedException } from '@utils/exception';
-import { DB_PATH, TRK_DIR } from '@common/constant';
+import Database from "better-sqlite3";
+import fs from "fs";
+import { logger } from "@utils/logger";
+import { runMigrations } from "./schema";
+import { DatabaseConnectionException, DatabaseMigrationException, DatabaseNotInitializedException } from "@utils/exception";
+import { DB_PATH, TRK_DIR } from "@common/constant";
 
 let _db: Database.Database | null = null;
 
@@ -23,10 +23,9 @@ export function initDb(): Database.Database {
     throw new DatabaseConnectionException(err, { meta: { path: TRK_DIR } });
   }
 
-
   _db = new Database(DB_PATH);
-  _db.pragma('journal_mode = WAL');
-  _db.pragma('foreign_keys = ON');
+  _db.pragma("journal_mode = WAL");
+  _db.pragma("foreign_keys = ON");
 
   try {
     runMigrations(_db);

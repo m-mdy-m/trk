@@ -12,6 +12,7 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 > This project is under active development. No stable release yet.
 
 ### Added
+
 - Timer engine: `start`, `stop`, `pause`, `resume`, `cancel`, `status`
 - Manual time logging: `trk log add`
 - Daily log view: `trk log`

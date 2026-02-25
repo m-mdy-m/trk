@@ -7,6 +7,7 @@ Thanks for considering contributing to TRK.
 ### Reporting bugs
 
 Open an issue with:
+
 - Clear title
 - Steps to reproduce
 - Expected vs actual behavior
@@ -15,6 +16,7 @@ Open an issue with:
 ### Suggesting features
 
 Open an issue describing:
+
 - What problem it solves
 - How it should work
 - Why it's useful
@@ -44,6 +46,7 @@ type(scope): description
 ```
 
 Types:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation only
@@ -53,6 +56,7 @@ Types:
 - `chore`: Tooling, dependencies, etc
 
 Examples:
+
 ```
 feat(timer): add pause/resume functionality
 fix(report): calculate weekly hours correctly

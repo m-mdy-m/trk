@@ -13,7 +13,7 @@ export class BaseException extends Error {
   constructor(message: string, options: BaseExceptionOptions = {}) {
     super(message);
     this.name = this.constructor.name;
-    this.code = options.code ?? 'ERROR';
+    this.code = options.code ?? "ERROR";
     this.cause = options.cause;
     this.meta = options.meta;
 

@@ -19,10 +19,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node -r tsconfig-paths/register src/main.ts",
+    "dev": "npx tsx -r tsconfig-paths/register src/main.ts",
     "start": "node dist/main.js",
     "prepare": "husky",
-    "migrate": "ts-node -r tsconfig-paths/register src/core/database/migrate.ts",
     "clean": "pnpm -r clean",
     "typecheck": "tsc --noEmit",
     "format": "prettier --check .",

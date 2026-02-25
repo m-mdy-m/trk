@@ -18,7 +18,6 @@ TRK is a command-line time tracker built for engineers who want to **own their t
 
 The entire application is wired together by an **event-driven architecture** using [`@glandjs/events`](https://github.com/glandjs/events). Every CLI command publishes an event; every service is a pure subscriber. No framework, no magic DI container — just a clean message bus.
 
-
 ## Install
 
 ```bash
@@ -84,8 +83,8 @@ MIT — see [LICENSE](./LICENSE).
 &nbsp;&nbsp;
 [![PSX](https://img.shields.io/badge/PSX-project%20structure%20checker-orange?style=flat-square)](https://github.com/m-mdy-m/psx)
 
-*[@glandjs/events](https://github.com/glandjs/events) — zero-dependency event broker used as the application's internal message bus.*
+_[@glandjs/events](https://github.com/glandjs/events) — zero-dependency event broker used as the application's internal message bus._
 
-*[PSX](https://github.com/m-mdy-m/psx) — project structure checker that keeps this codebase consistent.*
+_[PSX](https://github.com/m-mdy-m/psx) — project structure checker that keeps this codebase consistent._
 
 </div>
