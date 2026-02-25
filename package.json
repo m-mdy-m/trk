@@ -28,7 +28,6 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
-    "coverage": "nyc --reporter=text-summary pnpm test && nyc report --reporter=text-summary > coverage.md",
     "version": "changeset version",
     "release": "pnpm build && pnpm changeset publish",
     "release:alpha": "pnpm build && pnpm changeset publish --tag alpha",
