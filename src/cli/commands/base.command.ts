@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import { SharedCommand } from "@common/base.common";
+import { SharedCommand } from "@common/shared.common";
 import { EventPayload, Events } from "@glandjs/events";
 import { TrkEvents } from "@core/events";
 import Table from "cli-table3";

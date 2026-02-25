@@ -1,4 +1,4 @@
-import { SharedCommand } from "@common/base.common";
+import { SharedCommand } from "@common/shared.common";
 import { getDb } from "@core/database";
 import { DatabaseException } from "@utils/exception";
 import { Database } from "better-sqlite3";
